@@ -4,7 +4,7 @@ import app from './firebaseConfig';
 const db = getFirestore(app);
 
 
-//CREATE DATA
+// CREATE DATA
 const createData = async (title, author) => {
   try {
     const docRef = await addDoc(collection(db, 'articles'), { title, author });
@@ -14,20 +14,20 @@ const createData = async (title, author) => {
   }
 };
 
-//READ DATA
+// READ DATA
 const readData = async () => {
   const querySnapshot = await getDocs(collection(db, 'articles'));
   const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   return data;
 };
 
-//DELETE DATA
+// DELETE DATA
 const deleteData = async (id) => {
   await deleteDoc(doc(db, 'articles', id));
   console.log('Document deleted with ID: ', id);
 };
 
-//Update DATA
+// Update DATA
 const updateData = async (id, newData) => {
   await updateDoc(doc(db, 'articles', id), newData);
   console.log('Document updated with ID: ', id);
