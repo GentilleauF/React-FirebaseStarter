@@ -1,7 +1,9 @@
 const ArticleList = ({ handleDelete, handleUpdate, articles }) => {
   return (
     <div>
-      <h2>Mes Articles</h2>
+          {articles.length > 0 ? (
+        <h2>Mes Articles</h2>
+      ) : null}
       <ul>
         {console.log(articles)}
         {articles &&

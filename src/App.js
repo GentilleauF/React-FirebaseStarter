@@ -7,6 +7,7 @@ import {
 } from "./Firebase/firebaseCRUD";
 import AddArticle from "./Components/AddArticle";
 import ArticleList from "./Components/ArticleList";
+import FecthFromApi from "./Components/FecthFromApi";
 
 function App() {
   const [title, setTitle] = useState("");
@@ -57,6 +58,8 @@ function App() {
         articles={articles}
         />
       )}
+
+      <FecthFromApi/>
     </div>
   );
 }
